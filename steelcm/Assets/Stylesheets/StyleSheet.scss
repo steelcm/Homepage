@@ -1,0 +1,49 @@
+﻿@import 'Vendor/Bootstrap-3.2.0/bootstrap.scss';
+// variables
+$highlight: #ffe599;
+
+// global elements
+body{
+    font-family: Calibri Light,Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h4 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+p{
+    text-align: left;
+    strong{
+        background-color: $highlight;
+        font-weight: normal;
+    }
+}
+
+hr {
+    border-color: $state-danger-border;
+}
+
+dd {
+    display: inline;
+}
+
+// custom extensions
+.hero {
+    h1, h2, h3 {
+        text-align: center;
+    }
+}
+
+.field-validation-error {
+    @extend .text-danger;
+}

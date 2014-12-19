@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+
+<html @Html.Raw(ViewBag.HtmlAttribute)>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("head", false)
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+    @RenderSection("foot", false)
+</body>
+</html>

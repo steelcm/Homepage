@@ -1,0 +1,1 @@
+﻿var projectApp = angular.module('ProjectApp', ['projectServices']);
