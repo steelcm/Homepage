@@ -15,7 +15,9 @@ build/
 [Bb]in/
 [Oo]bj/
 
+# Packages folder exclude
 [Pp]ackages/
+![Pp]ackages/repositories.config
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
