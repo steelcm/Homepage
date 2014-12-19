@@ -114,7 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Content\Home\Index.md" />
-    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Assets\Scripts\Project-App.js" />
     <Content Include="Assets\Scripts\Project-Controller.js" />
     <Content Include="Assets\Scripts\Project-Services.js" />
@@ -248,9 +247,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
