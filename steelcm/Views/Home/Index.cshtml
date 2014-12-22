@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.HtmlAttribute = "ng-app='ProjectApp'";
+    ViewBag.HtmlAttribute = "ng-app='ProjectApp' ng-controller='ProjectController'";
 }
 @section head{
     @Scripts.Render("~/Assets/Scripts/Vendor/angular")
@@ -15,44 +15,43 @@
     @Scripts.Render("~/Assets/Scripts/Vendor/jquery.validate")
     @Scripts.Render("~/Assets/Scripts/Vendor/jquery.validate.unobtrusive")
 }
- 
-@* Render page content from markdown *@   
+
+@* Render page content from markdown *@
 <div class="hero">
     @Html.RenderMarkdown("~/Assets/Content/Home/Lorem.md")
 </div>
 <hr />
 @* Render project info from json *@
-<div class="row" ng-controller="ProjectController">
-    <div ng-repeat="project in projects">
-        <div class="col-md-4">
-            <h3>
-                {{project.Name}}
-                <small>(Duration&nbsp;{{project.Duration}}&nbsp;months)</small>
-            </h3>
-            <p>{{project.Description}}</p>
-            <p/>
-            <dl>
-                <dt>Key Technologies</dt>
-                <dd ng-repeat="tag in project.Tags">
-                    <span class="label label-info">{{tag}}</span>
-                </dd>
-            </dl>
-        </div>
+<div class="row project-list">
+    <div ng-repeat="project in projects" class="col-md-4">
+        <h3>
+            {{project.Name}}
+            <small>(Duration&nbsp;{{project.Duration}}&nbsp;months)</small>
+        </h3>
+        <p>{{project.Description}}</p>
+        <p />
+        <dl>
+            <dt>Key Technologies</dt>
+            <dd ng-repeat="tag in project.Tags">
+                <span class="label label-info">{{tag}}</span>
+            </dd>
+        </dl>
     </div>
 </div>
+<button ng-click="loadMoreProjects()" ng-show="hasMoreProjects()" class="center-block">Show More</button>
 <hr />
 @* Render contact form *@
 <p>I'd love to hear from you, feel free to contact me directly via email, skype or twitter. Alternatively, if you have a new project in mind, fill in the form below and I'll get back to you as soon as I can.</p>
-<p/>
-@using(Html.BeginForm("Index", "Home", FormMethod.Post, new {@class = "", @role="form"}))
+<p />
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "", @role = "form" }))
 {
-    
+
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(o => o.Name)
                 <small class="muted">(Required)</small>
-                @Html.TextBoxFor(o => o.Name, new {@class = "form-control"})
+                @Html.TextBoxFor(o => o.Name, new { @class = "form-control" })
                 @Html.ValidationMessageFor(o => o.Name)
             </div>
 
@@ -79,16 +78,16 @@
             <div class="form-group">
                 @Html.LabelFor(o => o.Message)
                 <small class="muted">(Required)</small>
-                @Html.TextAreaFor(o => o.Message, new { @class = "form-control", @rows =  "9" })
+                @Html.TextAreaFor(o => o.Message, new { @class = "form-control", @rows = "9" })
                 @Html.ValidationMessageFor(o => o.Message)
             </div>
-    
+
             <div class="form-group">
                 <input type="submit" value="Send message" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-<p/>
+<p />
 <div class="text-center text-muted"><small>&copy; @DateTime.Now.ToString("yyyy")</small></div>
-<p/>
+<p />

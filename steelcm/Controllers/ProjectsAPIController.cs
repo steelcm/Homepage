@@ -29,6 +29,22 @@ namespace steelcm.Controllers
                     Completion = new DateTime(2014, 1, 1),
                     Description = "Cloud based multi-tenant application allowing clients to access their managed financial plans as well as add their own un-managed plans.",
                     Tags = TagDictionary.Where(o => (new List<TagEnum>(){TagEnum.MVC, TagEnum.MSSQL, TagEnum.IIS }).Contains(o.Key)).ToDictionary(o => o.Key, o => o.Value)
+                },
+                new ProjectModel(){
+                    Id = 2,
+                    Name = "Polar",
+                    Duration = 5,
+                    Completion = new DateTime(2014, 1, 1),
+                    Description = "Cloud based multi-tenant application allowing clients to access their managed financial plans as well as add their own un-managed plans.",
+                    Tags = TagDictionary.Where(o => (new List<TagEnum>(){TagEnum.MVC, TagEnum.MSSQL, TagEnum.IIS }).Contains(o.Key)).ToDictionary(o => o.Key, o => o.Value)
+                },
+                new ProjectModel(){
+                    Id = 2,
+                    Name = "Polar",
+                    Duration = 5,
+                    Completion = new DateTime(2014, 1, 1),
+                    Description = "Cloud based multi-tenant application allowing clients to access their managed financial plans as well as add their own un-managed plans.",
+                    Tags = TagDictionary.Where(o => (new List<TagEnum>(){TagEnum.MVC, TagEnum.MSSQL, TagEnum.IIS }).Contains(o.Key)).ToDictionary(o => o.Key, o => o.Value)
                 }
             };
             return jsonModel;

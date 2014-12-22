@@ -47,3 +47,7 @@ dd {
 .field-validation-error {
     @extend .text-danger;
 }
+
+.project-list > .col-md-4 {
+    min-height: 250px;
+}
